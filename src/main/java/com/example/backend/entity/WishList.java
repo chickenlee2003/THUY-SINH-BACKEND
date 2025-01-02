@@ -22,11 +22,7 @@ public class WishList {
     @JoinColumn(name = "user_id", nullable = false) // Foreign key to Users/Account table
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "wishlist_products",
-            joinColumns = @JoinColumn(name = "wish_list_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products; // List of products in the wishlist
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false) // Foreign key to Products table
+    private Product product;
 }

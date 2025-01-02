@@ -41,7 +41,7 @@ public class Product extends BaseEntity{
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem>  cartItems;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<WishList>  wishLists;
+    private List<WishList>  wishList;
 
 
 }
